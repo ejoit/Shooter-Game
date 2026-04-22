@@ -8,7 +8,7 @@ const AIR_FRICTION = 130.0
 const JUMP_VELOCITY = -300.0
 const GRAVITY = 1100.0
 const FALL_GRAVITY = 1400
-const SHOOT_VELCITY = -780
+const SHOOT_VELCITY = -600
 const WALL_SHOOT_VELOCITY = -524
 const COYOTE_TIME = 0.2
 var coyote_timer = 0.0
@@ -29,7 +29,7 @@ func _ready() -> void:
 	#get_node("Particles/EnterScene").emitting = true
 	
 func _process(delta: float) -> void:
-	var shoot_dir = get_global_mouse_position()
+	#var shoot_dir = get_global_mouse_position()
 	rotation_degrees = wrap(rotation_degrees, 0, 360)
 
 
@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
-	print(velocity) 
+
 
 	
 	if is_on_floor():
@@ -109,26 +109,19 @@ func _physics_process(delta):
 		$PlayerSoundEffects/Shoot_Sound_Test.play()
 	
 	
-	if is_on_floor():
+
 	# Horizontal movement
-		if direction != 0:
-			var accel = ACCELERATION if is_on_floor() else AIR_ACCELERATION
-			velocity.x = move_toward(velocity.x, direction * SPEED, accel * delta)
-		else:
-			var friction = FRICTION if is_on_floor() else AIR_FRICTION
-			velocity.x = move_toward(velocity.x, 0, friction * delta)
+	if direction != 0:
+		var accel = ACCELERATION if is_on_floor() else AIR_ACCELERATION
+		velocity.x = move_toward(velocity.x, direction * SPEED, accel * delta)
 	else:
-		if direction != 0:
-			var accel = ACCELERATION if is_on_floor() else AIR_ACCELERATION
-			velocity.x = move_toward(velocity.x, direction * SPEED, accel * delta)
-		else:
-			var friction = FRICTION if is_on_floor() else AIR_FRICTION
-			velocity.x = move_toward(velocity.x, 0, friction * delta) 
-			
+		var friction = FRICTION if is_on_floor() else AIR_FRICTION
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
+	
 	
 
 	velocity.x = clamp(velocity.x, -600, 600)
-	velocity.y = clamp(velocity.y, -650, 650)
+	velocity.y = clamp(velocity.y, -760, 900)
 	move_and_slide()
 	
 	if is_on_wall() and can_wall_slide == true:

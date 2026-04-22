@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b2hlg63dy1dgx" path="res://Scenes/spike.tscn" id="1_ny73a"]
 [ext_resource type="TileSet" uid="uid://b2mrkqq46pcai" path="res://TileSets/new_tile_set.tres" id="2_ec1s3"]
+[ext_resource type="PackedScene" uid="uid://dihji23xxltkc" path="res://Scenes/checkpoint.tscn" id="4_ec1s3"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/player.tscn" id="4_x7m6l"]
 
 [node name="TestLevel1" type="Node2D" unique_id=1905336947]
@@ -54,3 +55,6 @@ layer_0/tile_data = PackedInt32Array(65535, 4, 0, 0, 4, 0, 1, 4, 0, 65537, 4, 0,
 
 [node name="Player" parent="." unique_id=591046258 instance=ExtResource("4_x7m6l")]
 position = Vector2(0, -32)
+
+[node name="Checkpoint" parent="." unique_id=458048402 instance=ExtResource("4_ec1s3")]
+position = Vector2(592, 16)
