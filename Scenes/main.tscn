@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://155xx7s6y6ta"]
+
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/player.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://d3fdpk442kfj4" path="res://Scenes/tile_map_test1.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dihji23xxltkc" path="res://Scenes/checkpoint.tscn" id="3_8gbba"]
+
+[node name="Main" type="Node2D" unique_id=206500854]
+
+[node name="Player" parent="." unique_id=591046258 instance=ExtResource("1_bo1nx")]
+position = Vector2(54, 173)
+
+[node name="Checkpoint" parent="." unique_id=458048402 instance=ExtResource("3_8gbba")]
+position = Vector2(1180, 168)
+
+[node name="TileMap" parent="." unique_id=817859936 instance=ExtResource("2_8gbba")]

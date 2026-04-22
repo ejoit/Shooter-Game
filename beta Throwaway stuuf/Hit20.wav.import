@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwmcbba4h4kom"
+path="res://.godot/imported/Hit20.wav-a5498c872adc9b5602726e56fd509737.sample"
+
+[deps]
+
+source_file="res://beta Throwaway stuuf/Hit20.wav"
+dest_files=["res://.godot/imported/Hit20.wav-a5498c872adc9b5602726e56fd509737.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ca2ybbkbtlbeu"]
+
+[sub_resource type="Curve" id="Curve_ay0us"]
+_data = [Vector2(0.020325199, 1), 0.0, 0.0, 0, 0, Vector2(0.699187, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Deathpar" type="CPUParticles2D" unique_id=150227896]
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+scale_amount_min = 5.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_ay0us")
+color = Color(0.5965748, 0.09804181, 4.813075e-08, 1)

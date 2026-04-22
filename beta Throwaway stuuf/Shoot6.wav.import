@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://u8e06n0l7dgt"
+path="res://.godot/imported/Shoot6.wav-e3bf339d6baba46ed98c8a37da5e9269.sample"
+
+[deps]
+
+source_file="res://beta Throwaway stuuf/Shoot6.wav"
+dest_files=["res://.godot/imported/Shoot6.wav-e3bf339d6baba46ed98c8a37da5e9269.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

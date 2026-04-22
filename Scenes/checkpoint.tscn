@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dihji23xxltkc"]
+
+[ext_resource type="Script" uid="uid://bnl2dqcq4fwr5" path="res://Scripts/checkpoint.gd" id="1_2cwi7"]
+[ext_resource type="Texture2D" uid="uid://c71k6hwebwrwn" path="res://beta Throwaway stuuf/betagun.png" id="1_lbcco"]
+[ext_resource type="AudioStream" uid="uid://b77r3sat14cyo" path="res://beta Throwaway stuuf/PowerUp_Test.wav" id="3_e75gc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cwi7"]
+size = Vector2(20, 50)
+
+[node name="Checkpoint" type="Node2D" unique_id=458048402]
+script = ExtResource("1_2cwi7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=577037853]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1020018173]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_2cwi7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1746016413]
+rotation = 1.5707964
+scale = Vector2(2.0625, 0.4375)
+texture = ExtResource("1_lbcco")
+
+[node name="Label" type="Label" parent="." unique_id=512918381]
+offset_left = -21.0
+offset_top = -52.0
+offset_right = 23.0
+offset_bottom = -29.0
+text = "GOAL"
+
+[node name="LevelComplete" type="AudioStreamPlayer2D" parent="." unique_id=441365040]
+stream = ExtResource("3_e75gc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b2hlg63dy1dgx"]
+
+[ext_resource type="Script" uid="uid://jj7jrby6c6mp" path="res://Scripts/spike.gd" id="1_1hotg"]
+[ext_resource type="Texture2D" uid="uid://v4b8m5fhkyhu" path="res://beta Throwaway stuuf/Spike.png" id="2_2mnih"]
+[ext_resource type="AudioStream" uid="uid://bwmcbba4h4kom" path="res://beta Throwaway stuuf/Hit20.wav" id="3_2mnih"]
+[ext_resource type="PackedScene" uid="uid://ca2ybbkbtlbeu" path="res://Particals/deathPar.tscn" id="4_fhxds"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhxds"]
+
+[node name="Spike" type="Node2D" unique_id=849327977]
+script = ExtResource("1_1hotg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=452756701]
+texture = ExtResource("2_2mnih")
+region_enabled = true
+region_rect = Rect2(0, 16, 32, 16)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1562716250]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1020431468]
+position = Vector2(0, 8)
+rotation = 0.7853982
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_fhxds")
+
+[node name="SpikeDeath" type="AudioStreamPlayer2D" parent="." unique_id=1702070225]
+stream = ExtResource("3_2mnih")
+
+[node name="Deathpar" parent="." unique_id=150227896 instance=ExtResource("4_fhxds")]
+position = Vector2(0, -3)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

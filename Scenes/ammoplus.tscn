@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://pc1hbk2qujd7"]
+
+[ext_resource type="Script" uid="uid://d2swujediw46i" path="res://Scripts/ammoplus.gd" id="1_l2oxr"]
+[ext_resource type="Texture2D" uid="uid://c4em4pgk0hgah" path="res://beta Throwaway stuuf/tile1.png" id="2_aawto"]
+[ext_resource type="AudioStream" uid="uid://b77r3sat14cyo" path="res://beta Throwaway stuuf/PowerUp_Test.wav" id="3_aawto"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsyc3"]
+size = Vector2(48, 48)
+
+[node name="ammoplus" type="Node2D" unique_id=724277533]
+script = ExtResource("1_l2oxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2116031602]
+modulate = Color(0.90588236, 0.654902, 0, 1)
+texture = ExtResource("2_aawto")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1596556237]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1938177212]
+shape = SubResource("RectangleShape2D_jsyc3")
+
+[node name="PowerUp" type="AudioStreamPlayer2D" parent="." unique_id=2026773008]
+stream = ExtResource("3_aawto")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

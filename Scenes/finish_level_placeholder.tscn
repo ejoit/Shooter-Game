@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bebnb4x4e5o3d"]
+
+[ext_resource type="Texture2D" uid="uid://df744sipcfo6c" path="res://beta Throwaway stuuf/669a2eb280d4d5da13d54645.webp" id="1_w2vhf"]
+
+[node name="Finish_level_placeholder" type="Node2D" unique_id=863390654]
+
+[node name="Label" type="Label" parent="." unique_id=2096625703]
+offset_right = 1148.0
+offset_bottom = 636.0
+theme_override_font_sizes/font_size = 27
+text = "YAY YOU FIINSHED LEVEL BUT IV CODED NOTHING ELSE PAST THIS POINT
+
+THIS WHOLE SCREEN IS LIKE A PLACE HOLDER OR SOMTHING :)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1680206252]
+visible = false
+position = Vector2(574.5, 323.00003)
+scale = Vector2(1.6442854, 1.3479657)
+texture = ExtResource("1_w2vhf")

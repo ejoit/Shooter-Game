@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b704magfr2lwh"]
+
+[ext_resource type="Script" uid="uid://y08ni6d54pju" path="res://Scripts/tile_screen.gd" id="1_y6wf6"]
+
+[node name="TileScreen" type="Node2D" unique_id=1699904072]
+script = ExtResource("1_y6wf6")
+
+[node name="Label" type="Label" parent="." unique_id=672523939]
+offset_right = 1142.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 40
+text = "RECOIL GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_Manager" type="Control" parent="." unique_id=99658737]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1154.0
+offset_bottom = 650.0
+
+[node name="START" type="Button" parent="Button_Manager" unique_id=1229296042]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 144.0
+offset_right = 742.0
+offset_bottom = 216.0
+text = "START"
+
+[connection signal="pressed" from="Button_Manager/START" to="." method="_on_start_pressed"]
