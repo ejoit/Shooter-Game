@@ -24,8 +24,6 @@ var wall_jump = false
 var wall_shot
 signal shoot
 
-
-
 func _ready() -> void:
 	add_to_group("player")
 	#get_node("Particles/EnterScene").emitting = true
