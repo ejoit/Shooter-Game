@@ -1,15 +1,19 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
-const ACCELERATION = 1800.0
-const AIR_ACCELERATION = 900.0
-const FRICTION = 1500.0
-const AIR_FRICTION = 75
-const JUMP_VELOCITY = -300.0
-const GRAVITY = 1200.0
+const JUMP_VELOCITY = -320.0
+
+const ACCELERATION = 1300.0
+const AIR_ACCELERATION = 400.0
+const FRICTION = 1800.0
+const AIR_FRICTION = 0
+
+
+
+const GRAVITY = 1200
 const FALL_GRAVITY = 1400
-const SHOOT_VELCITY = -650
-const WALL_SHOOT_VELOCITY = -650
+const SHOOT_VELCITY = -680
+const WALL_SHOOT_VELOCITY = -660
 const COYOTE_TIME = 0.2
 var coyote_timer = 0.0
 var air_shot = 0
@@ -70,7 +74,7 @@ func _physics_process(delta):
 		if velocity.y < 0:
 			velocity.y += GRAVITY * delta
 		else:
-			velocity.y += GRAVITY * 1.6 * delta
+			velocity.y += GRAVITY * 1.8 * delta
 
 
 	
@@ -97,7 +101,7 @@ func _physics_process(delta):
 		if velocity.y > 0:
 			velocity.y = 0		
 		
-		if is_on_floor() or is_on_wall():		
+		if is_on_floor() or is_on_wall_only():		
 			velocity += SHOOT_VELCITY * recoil_Direction
 		elif not is_on_floor() or not is_on_wall():
 			velocity += (WALL_SHOOT_VELOCITY) * recoil_Direction
