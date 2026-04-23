@@ -70,7 +70,7 @@ func _physics_process(delta):
 		if velocity.y < 0:
 			velocity.y += GRAVITY * delta
 		else:
-			velocity.y += GRAVITY * 2.8 * delta
+			velocity.y += GRAVITY * 1.6 * delta
 
 
 	
