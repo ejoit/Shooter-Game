@@ -1,5 +1,6 @@
 extends Node
 
+#i forgot why this made do_later: [insert skull emoji here ->]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
