@@ -76,7 +76,7 @@ func _physics_process(delta):
 	
 		
 	if Input.is_action_just_released("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY / 3
+		velocity.y += JUMP_VELOCITY / 3
 	
 		
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -84,7 +84,7 @@ func _physics_process(delta):
 	# Jumpb
 	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or (is_on_wall() and wall_jump == true) or coyote_timer >=0) :
 		wall_jump = false
-		velocity.y = JUMP_VELOCITY
+		velocity.y += JUMP_VELOCITY
 		coyote_timer = 0
 		
 	if Input.is_action_just_pressed("fire") and air_shot >= 0 and cooldown_ready == true:
