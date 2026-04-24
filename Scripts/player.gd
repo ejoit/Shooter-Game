@@ -1,14 +1,6 @@
 extends CharacterBody2D
 
-<<<<<<< HEAD
-const SPEED = 300.0
-const JUMP_VELOCITY = -320.0
-const ACCELERATION = 1200.0
-const AIR_ACCELERATION = 580.0
-const FRICTION = 1800.0
-const AIR_FRICTION = 0
-const GRAVITY = 1200
-=======
+
 const SPEED = 320.0
 const ACCELERATION = 500.0
 const AIR_ACCELERATION = 520.0
