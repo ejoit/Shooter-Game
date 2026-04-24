@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const ACCELERATION = 1800.0
-const AIR_ACCELERATION = 900.0
-const FRICTION = 1500.0
-const AIR_FRICTION = 75
+const SPEED = 320.0
+const ACCELERATION = 500.0
+const AIR_ACCELERATION = 520.0
+const FRICTION = 2000 # Test Friction as 2000
+const AIR_FRICTION = 50
 const JUMP_VELOCITY = -300.0
-const GRAVITY = 1200.0
+const GRAVITY = 1080.0
 const FALL_GRAVITY = 1400
 const SHOOT_VELCITY = -650
 const WALL_SHOOT_VELOCITY = -650
