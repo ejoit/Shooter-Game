@@ -1,26 +1,29 @@
-extends CharacterBody2D
+extends Node
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
 enum  States {IDLE, WALKING, SHOOTING}
-var state = States.IDLE
 
+var state = States.IDLE
 
 func _physics_process(delta: float) -> void:
 	match state:
 		States.IDLE:
 			idle()
 		States.WALKING:
-			walking()
+			Walking()
 		States.SHOOTING:
-			shooting()
-	
-	
-	move_and_slide()
+			Shooting()
 
+
+
+func change_state(newState):
+	state = newState
+	
 func idle():
 	pass
-func walking():
+
+		
+func Walking():
 	pass
-func shooting():
+
+func Shooting():
 	pass

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://be8qbmt0fe144"]
 
-[ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://Scripts/OLD player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dkpnvud1may1r" path="res://beta Throwaway stuuf/test_char.png" id="2_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://bfyqebuqpeull" path="res://Scenes/gun_1.tscn" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://co6ub37ujgp7h" path="res://Scripts/camera_2d.gd" id="3_vgqql"]
