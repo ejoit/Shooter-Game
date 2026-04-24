@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cixntgccvttup"]
+
+[ext_resource type="Script" uid="uid://dvwj680jjheu3" path="res://scripts/howtoplay.gd" id="1_kj5ta"]
+
+[node name="HOWTOPLAY" type="Node2D" unique_id=795397478]
+script = ExtResource("1_kj5ta")
+
+[node name="Button" type="Button" parent="." unique_id=994807821]
+offset_left = 21.0
+offset_top = 168.0
+offset_right = 219.0
+offset_bottom = 232.0
+
+[node name="Label" type="Label" parent="." unique_id=878611747]
+offset_right = 1141.0
+offset_bottom = 626.0
+text = "HOW TO PLAY
+WASD TO MOVE
+USE ARROW TO AIM GUN
+RIGHT CLICK TO SHOOT
+YOU CAN HOLD ON TO A WALL FOR ABOUT A SECOND
+(i threw this menu together in like 10 seconds)"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

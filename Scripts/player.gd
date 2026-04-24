@@ -2,17 +2,13 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -320.0
-
-const ACCELERATION = 1300.0
-const AIR_ACCELERATION = 400.0
+const ACCELERATION = 1200.0
+const AIR_ACCELERATION = 580.0
 const FRICTION = 1800.0
 const AIR_FRICTION = 0
-
-
-
 const GRAVITY = 1200
 const FALL_GRAVITY = 1400
-const SHOOT_VELCITY = -680
+const SHOOT_VELCITY = -660
 const WALL_SHOOT_VELOCITY = -660
 const COYOTE_TIME = 0.2
 var coyote_timer = 0.0
@@ -111,9 +107,7 @@ func _physics_process(delta):
 		shoot.emit()
 		air_shot = air_shot - 1
 		$PlayerSoundEffects/Shoot_Sound_Test.play()
-	
-	
-
+		
 	# Horizontal movement
 	if direction != 0:
 		var accel = ACCELERATION if is_on_floor() else AIR_ACCELERATION
@@ -121,32 +115,26 @@ func _physics_process(delta):
 	else:
 		var friction = FRICTION if is_on_floor() else AIR_FRICTION
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
-	
-	
 
 	velocity.x = clamp(velocity.x, -600, 600)
-	velocity.y = clamp(velocity.y, -760, 900)
+	velocity.y = clamp(velocity.y, -680, 680)
 	move_and_slide()
 	
 	if is_on_wall() and can_wall_slide == true:
 		if wall_timer_started == false:
 			$Timers/on_wall.start()
 			wall_timer_started = true
-		velocity.y = clamp(velocity.y, -800, 8)
+		velocity.y = clamp(velocity.y, -800, 20)
 	if  is_on_floor(): 
 		can_wall_slide = true
 		wall_timer_started = false
 		on_wall_time_ready = true
-
-
+		
 func _on_shoot() -> void:
 	pass # Replace with function body.
 
-
 func _on_cool_down_timeout() -> void:
 		cooldown_ready = true
-
-
 
 func _on_on_wall_timeout() -> void:
 	can_wall_slide = false
