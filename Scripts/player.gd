@@ -8,7 +8,6 @@ const FRICTION = 2000 # Test Friction as 2000
 const AIR_FRICTION = 50
 const JUMP_VELOCITY = -300.0
 const GRAVITY = 1080.0
->>>>>>> a44dd58b1548f283b5c70b37a8db700cbc19e715
 const FALL_GRAVITY = 1400
 const SHOOT_VELCITY = -660
 const WALL_SHOOT_VELOCITY = -660
