@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://be8qbmt0fe144"]
 
-[ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://Scripts/OLD player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://c7uw2se0iwjkh" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dkpnvud1may1r" path="res://beta Throwaway stuuf/test_char.png" id="2_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://bfyqebuqpeull" path="res://Scenes/gun_1.tscn" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://co6ub37ujgp7h" path="res://Scripts/camera_2d.gd" id="3_vgqql"]
@@ -84,6 +84,5 @@ wait_time = 0.5
 [node name="CoolDown" type="Timer" parent="Timers" unique_id=1074912986]
 wait_time = 0.2
 
-[connection signal="shoot" from="." to="Camera2D" method="_on_player_shoot"]
 [connection signal="timeout" from="Timers/on_wall" to="." method="_on_on_wall_timeout"]
 [connection signal="timeout" from="Timers/CoolDown" to="." method="_on_cool_down_timeout"]
