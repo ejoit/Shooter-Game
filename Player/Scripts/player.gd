@@ -20,26 +20,27 @@ func _physics_process(delta: float) -> void:
 		States.GROUND:
 			ground(direction)
 		States.AIR:
-			air()
+			air(direction)
 		States.WALL:
-			wall()
+			wall(direction)
 		States.RECOIL:
-			recoil()
+			recoil(direction)
 		States.FALL:
-			fall()
+			fall(direction)
 			
 	move_and_slide()
 
 func ground(direction):
 	velocity.x = direction * VELOCITY_TEST
-func air():
+	
+func air(direction):
 	print("Walking")
 
-func wall():
+func wall(direction):
 	print("wall")
 
-func recoil():
+func recoil(direction):
 	print("Recoil")
 	
-func fall():
+func fall(direction):
 	pass
