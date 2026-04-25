@@ -55,7 +55,8 @@ func air(direction, delta):
 	
 	
 func wall(direction):
-	print("wall")
+	pass
+
 
 func recoil(direction):
 	print("Recoil")
