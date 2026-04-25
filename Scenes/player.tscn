@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bfyqebuqpeull" path="res://Scenes/gun_1.tscn" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://co6ub37ujgp7h" path="res://Scripts/camera_2d.gd" id="3_vgqql"]
 [ext_resource type="AudioStream" uid="uid://u8e06n0l7dgt" path="res://beta Throwaway stuuf/Shoot6.wav" id="5_fkybt"]
-[ext_resource type="Script" uid="uid://dwgdvtddx81b3" path="res://Player/Scripts/state_machine.gd" id="6_x3wgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(30, 30)
@@ -84,14 +83,3 @@ wait_time = 0.5
 
 [node name="CoolDown" type="Timer" parent="Timers" unique_id=1074912986]
 wait_time = 0.2
-
-[node name="StateMachine" type="Node" parent="." unique_id=1232065455]
-script = ExtResource("6_x3wgy")
-
-[node name="Ground" type="Node" parent="StateMachine" unique_id=1921054662]
-
-[node name="Air" type="Node" parent="StateMachine" unique_id=915201395]
-
-[node name="Wall" type="Node" parent="StateMachine" unique_id=946193325]
-
-[node name="Recoil" type="Node" parent="StateMachine" unique_id=590763122]
