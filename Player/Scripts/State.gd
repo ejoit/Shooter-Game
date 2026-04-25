@@ -1,7 +1,9 @@
 extends Node
 
-enum States {GROUND, AIR, WALL, RECOIL}
+enum States {GROUND, AIR, WALL, RECOIL, FALL}
 var state = States.GROUND
+var VELOCITY_TEST = 300	
+var velocity = 67
 
 func change_state(newState):
 	state = newState
@@ -16,12 +18,11 @@ func _physics_process(delta: float) -> void:
 			wall()
 		States.RECOIL:
 			recoil()
+		States.FALL:
+			fall()
 
 func ground():
-	print("ground")
-	if Input.is_action_just_pressed("ui_left"):
-		change_state(States.AIR)
-
+	velocity.x = direction * VELOCITY_TEST	
 func air():
 	print("Walking")
 
@@ -30,3 +31,6 @@ func wall():
 
 func recoil():
 	print("Recoil")
+	
+func fall():
+	pass

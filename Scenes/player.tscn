@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bfyqebuqpeull" path="res://Scenes/gun_1.tscn" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://co6ub37ujgp7h" path="res://Scripts/camera_2d.gd" id="3_vgqql"]
 [ext_resource type="AudioStream" uid="uid://u8e06n0l7dgt" path="res://beta Throwaway stuuf/Shoot6.wav" id="5_fkybt"]
-[ext_resource type="Script" uid="uid://cext0l4oc11n0" path="res://Player/Scripts/State.gd" id="6_x3wgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(30, 30)
@@ -86,7 +85,3 @@ wait_time = 0.5
 wait_time = 0.2
 
 [node name="State" type="Node" parent="." unique_id=1232065455]
-script = ExtResource("6_x3wgy")
-
-[connection signal="timeout" from="Timers/on_wall" to="." method="_on_on_wall_timeout"]
-[connection signal="timeout" from="Timers/CoolDown" to="." method="_on_cool_down_timeout"]
