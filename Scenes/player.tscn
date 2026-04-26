@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://be8qbmt0fe144"]
 
-[ext_resource type="Script" uid="uid://c7uw2se0iwjkh" path="res://Player/Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://oopavh2c5iu6" path="res://Player/Scripts/newplayer.gd" id="1_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://dkpnvud1may1r" path="res://beta Throwaway stuuf/test_char.png" id="2_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://bfyqebuqpeull" path="res://Scenes/gun_1.tscn" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://co6ub37ujgp7h" path="res://Scripts/camera_2d.gd" id="3_vgqql"]
 [ext_resource type="AudioStream" uid="uid://u8e06n0l7dgt" path="res://beta Throwaway stuuf/Shoot6.wav" id="5_fkybt"]
+[ext_resource type="Script" uid="uid://dwgdvtddx81b3" path="res://Player/Scripts/state_machine.gd" id="6_3smsa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(30, 30)
@@ -18,7 +19,7 @@ _data = [Vector2(0.020325199, 1), 0.0, 0.0, 0, 0, Vector2(0.699187, 0), 0.0, 0.0
 point_count = 2
 
 [node name="Player" type="CharacterBody2D" unique_id=591046258]
-script = ExtResource("1_cvnsp")
+script = ExtResource("1_x3wgy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=372695957]
 position = Vector2(-2.3841858e-07, 0)
@@ -83,3 +84,9 @@ wait_time = 0.5
 
 [node name="CoolDown" type="Timer" parent="Timers" unique_id=1074912986]
 wait_time = 0.2
+
+[node name="StateMachine" type="Node" parent="." unique_id=225548279]
+script = ExtResource("6_3smsa")
+metadata/_custom_type_script = "uid://dwgdvtddx81b3"
+
+[node name="Ground" type="Node" parent="StateMachine" unique_id=636971558]
