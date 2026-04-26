@@ -1,14 +1,18 @@
-extends Node
+extends State
 
+class_name AirState
 
+var GRAVITY = 800
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func enter():
 
+	print("air")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func handle_input(event: InputEvent):
+	if player.is_on_floor():
+		state_machine.change_state("GroundState")
 
+func physics_update(delta: float):
+	player.velocity.y += GRAVITY * delta
 #push from phone
 #I can edit but not run

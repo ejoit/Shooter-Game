@@ -3,6 +3,7 @@ extends Node
 class_name StateMachine
 
 @export var initial_state: State
+@export var player: Player
 var current_state: State
 var states: Dictionary = {}
 
@@ -13,6 +14,7 @@ func _ready() -> void:
 		if child is State:
 			states[child.name.to_lower()] = child
 			child.state_machine = self
+			child.player = player
 			
 	if initial_state:
 		change_state(initial_state.name.to_lower())
@@ -37,3 +39,4 @@ func change_state(new_state_name: String):
 	
 	if current_state:
 		current_state.enter()
+	pass

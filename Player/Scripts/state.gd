@@ -1,6 +1,8 @@
 extends  Node
 class_name State
 
+var state_machine: StateMachine
+var player: Player
 
 func enter():
 	pass
