@@ -30,4 +30,10 @@ func _input(event: InputEvent) -> void:
 		current_state.handle_input(event)
 	
 func change_state(new_state_name: String):
-	pass 
+	if current_state:
+		current_state.exit()
+		
+	current_state = states.get(new_state_name.to_lower())
+	
+	if current_state:
+		current_state.enter()
