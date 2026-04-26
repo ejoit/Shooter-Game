@@ -6,9 +6,9 @@ func enter():
 	pass
 func exit():
 	pass
-func update():
+func update(delta: float):
 	pass
-func physics_update():
+func physics_update(delta: float):
 	pass
 
 func handle_input(event: InputEvent):
