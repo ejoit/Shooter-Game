@@ -28,6 +28,7 @@ project/assembly_name="New Game Project"
 [file_customization]
 
 folder_colors={
+"res://Might use later/": "red",
 "res://Player/": "green"
 }
 

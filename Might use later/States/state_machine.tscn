@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b1u03bwv27qf8"]
+
+[ext_resource type="Script" uid="uid://dwgdvtddx81b3" path="res://Might use later/States/state_machine.gd" id="1_wiu0n"]
+[ext_resource type="Script" uid="uid://g03uxgws823b" path="res://Might use later/States/Ground.gd" id="2_k173b"]
+[ext_resource type="Script" uid="uid://7giy6ge4y0gu" path="res://Might use later/States/Air.gd" id="3_yoeyo"]
+
+[node name="StateMachine" type="Node" unique_id=1118068997 node_paths=PackedStringArray("initial_state", "player")]
+script = ExtResource("1_wiu0n")
+initial_state = NodePath("GroundState")
+player = NodePath("")
+metadata/_custom_type_script = "uid://dwgdvtddx81b3"
+
+[node name="GroundState" type="Node" parent="." unique_id=901593350]
+script = ExtResource("2_k173b")
+
+[node name="AirState" type="Node" parent="." unique_id=409535736]
+script = ExtResource("3_yoeyo")

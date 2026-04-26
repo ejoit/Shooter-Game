@@ -1,12 +1,9 @@
 [gd_scene format=3 uid="uid://be8qbmt0fe144"]
 
-[ext_resource type="Script" uid="uid://oopavh2c5iu6" path="res://Player/Scripts/newplayer.gd" id="1_8erm5"]
-[ext_resource type="Script" uid="uid://dwgdvtddx81b3" path="res://Player/Scripts/state_machine.gd" id="2_8erm5"]
+[ext_resource type="Script" uid="uid://c7uw2se0iwjkh" path="res://Player/Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dkpnvud1may1r" path="res://beta Throwaway stuuf/test_char.png" id="2_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://bfyqebuqpeull" path="res://Scenes/gun_1.tscn" id="3_6t5aa"]
-[ext_resource type="Script" uid="uid://g03uxgws823b" path="res://Player/Scripts/States/Ground.gd" id="3_f1ek2"]
 [ext_resource type="Script" uid="uid://co6ub37ujgp7h" path="res://Scripts/camera_2d.gd" id="3_vgqql"]
-[ext_resource type="Script" uid="uid://7giy6ge4y0gu" path="res://Player/Scripts/States/Air.gd" id="4_tx1dd"]
 [ext_resource type="AudioStream" uid="uid://u8e06n0l7dgt" path="res://beta Throwaway stuuf/Shoot6.wav" id="5_fkybt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
@@ -21,19 +18,7 @@ _data = [Vector2(0.020325199, 1), 0.0, 0.0, 0, 0, Vector2(0.699187, 0), 0.0, 0.0
 point_count = 2
 
 [node name="Player" type="CharacterBody2D" unique_id=591046258]
-script = ExtResource("1_8erm5")
-
-[node name="StateMachine" type="Node" parent="." unique_id=736643188 node_paths=PackedStringArray("initial_state", "player")]
-script = ExtResource("2_8erm5")
-initial_state = NodePath("GroundState")
-player = NodePath("..")
-metadata/_custom_type_script = "uid://dwgdvtddx81b3"
-
-[node name="GroundState" type="Node" parent="StateMachine" unique_id=189457691]
-script = ExtResource("3_f1ek2")
-
-[node name="AirState" type="Node" parent="StateMachine" unique_id=2094210729]
-script = ExtResource("4_tx1dd")
+script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=372695957]
 position = Vector2(-2.3841858e-07, 0)
