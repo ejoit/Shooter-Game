@@ -8,7 +8,7 @@ var test_v = 50
 
 enum States {GROUND, AIR, WALL, RECOIL, FALL}
 var state = States.GROUND
-var VELOCITY_TEST = 300	
+
 
 
 func change_state(newState):
@@ -22,16 +22,21 @@ func _physics_process(delta: float) -> void:
 		States.AIR:
 			air(direction, delta)
 		States.WALL:
-			wall(direction)
+			wall(direction, delta)
 		States.RECOIL:
 			recoil(direction)
 		States.FALL:
 			fall(direction)
 			
+	if is_on_wall():
+		change_state(States.WALL)
+			
 	move_and_slide()
+	 
 
 func ground(direction, delta):
-	velocity.x = direction * VELOCITY_TEST
+	var speed = 300	
+	velocity.x = direction * speed
 	velocity.y += GRAVITY * delta
 	
 	if Input.is_action_just_pressed("ui_accept"):
@@ -44,18 +49,23 @@ func ground(direction, delta):
 	if not is_on_floor():
 		change_state(States.AIR)
 	
-	
-	if is_on_wall_only():
-		pass
+		
 func air(direction, delta):
+	var speed = 20000
+	velocity.x = direction * speed
+	
 	velocity.y += GRAVITY * delta
 	if is_on_floor():
 		change_state(States.GROUND)
 	
 	
 	
-func wall(direction):
-	pass
+func wall(direction, delta):
+	if not is_on_wall():
+		change_state(States.AIR)
+	
+	velocity.y += 15 * delta
+	
 
 
 func recoil(direction):
