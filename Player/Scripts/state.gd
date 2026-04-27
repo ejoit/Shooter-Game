@@ -1,8 +1,6 @@
 extends  Node
 class_name State
 
-
-
 var GRAVITY = 1000
 @export
 var speed = 300
