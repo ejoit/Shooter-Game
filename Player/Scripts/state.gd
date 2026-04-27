@@ -8,7 +8,7 @@ var speed = 300
 var parent: Player
 
 func enter():
-	pass
+	return null
 	
 func exit():
 	pass
