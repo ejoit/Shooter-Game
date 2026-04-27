@@ -1,5 +1,6 @@
-extends  Node
 class_name State
+extends  Node
+
 
 var GRAVITY = 1000
 @export
@@ -7,10 +8,10 @@ var speed = 300
 
 var parent: Player
 
-func enter():
-	return null
+func enter() -> void:
+	pass
 	
-func exit():
+func exit()-> void:
 	pass
 
 func process_input(event: InputEvent)  -> State:

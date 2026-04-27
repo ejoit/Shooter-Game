@@ -1,5 +1,9 @@
 extends State
 
+
+# Called when the node enters the scene tree for the first time.
+
+
 # @expor var name_state: state
 #above is where i will add staets transition to
 #do it for each state you can transition to
@@ -8,7 +12,7 @@ extends State
 func enter() -> void:
 	super() # got no clue what this dose tutorial said somthing bout animation later on
 	#will leave in that for that reason
-	parent.velcoity.x = 0
+	parent.velocity.x = 0
 	print("idle and probs work")
 
 func process_input(event:InputEvent) -> State:
