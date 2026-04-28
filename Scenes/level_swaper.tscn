@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d1h0g6r6s2ktn"]
+
+[ext_resource type="Script" uid="uid://dslyeugexiiim" path="res://Scripts/level_swaper.gd" id="1_dg5fl"]
+
+[node name="Level_Swaper" type="Node2D" unique_id=2049589459]
+script = ExtResource("1_dg5fl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=794699582]

@@ -9,7 +9,8 @@ var test_v = 50
 enum States {GROUND, AIR, WALL, RECOIL, FALL}
 var state = States.GROUND
 
-
+func _ready() -> void:
+	add_to_group("player")
 
 func change_state(newState):
 	state = newState
