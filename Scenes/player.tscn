@@ -6,9 +6,8 @@
 [ext_resource type="Script" uid="uid://co6ub37ujgp7h" path="res://Scripts/camera_2d.gd" id="3_vgqql"]
 [ext_resource type="AudioStream" uid="uid://u8e06n0l7dgt" path="res://beta Throwaway stuuf/Shoot6.wav" id="5_fkybt"]
 [ext_resource type="Script" uid="uid://dwgdvtddx81b3" path="res://Player/Scripts/state_machine.gd" id="6_3smsa"]
-[ext_resource type="Script" uid="uid://bcbi2g4y4c02m" path="res://Player/Scripts/Player States/ground.gd" id="7_3smsa"]
+[ext_resource type="Script" uid="uid://bcbi2g4y4c02m" path="res://Player/Scripts/Player States/idle.gd" id="7_3smsa"]
 [ext_resource type="Script" uid="uid://cofxvhnt8whcu" path="res://Player/Scripts/Player States/jump.gd" id="7_8erm5"]
-[ext_resource type="Script" uid="uid://j1hhls32g0bh" path="res://Player/Scripts/Player States/fall.gd" id="9_f1ek2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(30, 30)
@@ -90,18 +89,13 @@ wait_time = 0.2
 
 [node name="StateMachine" type="Node" parent="." unique_id=225548279 node_paths=PackedStringArray("starting_state")]
 script = ExtResource("6_3smsa")
-starting_state = NodePath("fall")
+starting_state = NodePath("idle")
 metadata/_custom_type_script = "uid://dwgdvtddx81b3"
 
 [node name="jump" type="Node" parent="StateMachine" unique_id=1026661141]
 script = ExtResource("7_8erm5")
 speed = 700
 
-[node name="ground" type="Node" parent="StateMachine" unique_id=636971558 node_paths=PackedStringArray("jump_state", "fall_state")]
+[node name="idle" type="Node" parent="StateMachine" unique_id=636971558 node_paths=PackedStringArray("jump_state")]
 script = ExtResource("7_3smsa")
 jump_state = NodePath("../jump")
-fall_state = NodePath("../fall")
-
-[node name="fall" type="Node" parent="StateMachine" unique_id=988665722 node_paths=PackedStringArray("ground_state")]
-script = ExtResource("9_f1ek2")
-ground_state = NodePath("../ground")
