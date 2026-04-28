@@ -1,6 +1,5 @@
 extends CharacterBody2D
 #@onready var current_state = States.GROUND
-#this is a test
 
 var air_speed
 var GRAVITY = 1000
