@@ -1,6 +1,8 @@
 extends State
 @export
 var jump_state: State
+@export
+var fall_state: State
 
 # Called when the node enters the scene tree for the first time.
 
@@ -19,17 +21,19 @@ func enter() -> void:
 func process_input(event:InputEvent) -> State:
 	#return "inset stat name from that exort
 	#if Input.aation preess bleh bleh do retun state nmae
-
+	if not parent.is_on_floor():
+		return fall_state
 		# change to air/ fall state
 	return null
 
 
 func process_physics(delta: float) -> State:
 	parent.velocity.y += GRAVITY * delta
+	var direction := Input.get_axis("ui_left", "ui_right")
+	parent.velocity.x = direction * speed
 	parent.move_and_slide()
 	
-	if parent.is_on_floor():
-		return jump_state
+
 
 	return null
 	

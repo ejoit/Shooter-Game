@@ -8,7 +8,7 @@ var current_state: State
 func init(parent:Player)  -> void:
 	for child in get_children():
 		child.parent = parent
-#this si not the problem make sure child nodes have script attached
+
 		
 	change_state(starting_state)
 
