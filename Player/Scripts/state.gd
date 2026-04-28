@@ -3,6 +3,9 @@ extends  Node
 
 
 var GRAVITY = 1000
+@export
+var speed = 300
+
 var parent: Player
 
 func enter() -> void:
@@ -11,7 +14,7 @@ func enter() -> void:
 func exit()-> void:
 	pass
 
-func process_input(event: InputEvent) -> State:
+func process_input(event: InputEvent)  -> State:
 	return null
 
 func process_frame(delta: float)-> State:
