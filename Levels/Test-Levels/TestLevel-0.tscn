@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://b2mrkqq46pcai" path="res://TileSets/new_tile_set.tres" id="2_wmsvh"]
 [ext_resource type="PackedScene" uid="uid://dihji23xxltkc" path="res://Scenes/checkpoint.tscn" id="3_42iae"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/player.tscn" id="4_qcqbd"]
+[ext_resource type="PackedScene" uid="uid://d1h0g6r6s2ktn" path="res://Scenes/level_swaper.tscn" id="6_wmsvh"]
 
 [node name="TestLevel1" type="Node2D" unique_id=1905336947]
 script = ExtResource("1_k2qmv")
@@ -57,3 +58,7 @@ position = Vector2(616, 168)
 
 [node name="Player" parent="." unique_id=591046258 instance=ExtResource("4_qcqbd")]
 position = Vector2(88, -224)
+
+[node name="Level_Swaper" parent="." unique_id=2049589459 instance=ExtResource("6_wmsvh")]
+position = Vector2(104, -16)
+next_level = "res://Levels/Test-Levels/TestLevel-1.tscn"
