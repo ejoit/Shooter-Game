@@ -1,17 +1,10 @@
 extends CharacterBody2D
 class_name Player 
 
-@onready
-var state_machine = $StateMachine
+@onready var machine = $StateMachine
 
 func _ready() -> void:
-	state_machine.init(self)
+	for State in machine.get_children():
+		State.player = self
+		State.machine = machine
 	
-func _unhandled_input(event: InputEvent) -> void:
-	state_machine.process_input(event)
-
-func _physics_process(delta: float) -> void:
-	state_machine.process_physics(delta)
-	
-func _process(delta: float) -> void:
-	state_machine.process_frame(delta)

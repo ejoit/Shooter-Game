@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bfyqebuqpeull" path="res://Scenes/gun_1.tscn" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://co6ub37ujgp7h" path="res://Scripts/camera_2d.gd" id="3_vgqql"]
 [ext_resource type="AudioStream" uid="uid://u8e06n0l7dgt" path="res://beta Throwaway stuuf/Shoot6.wav" id="5_fkybt"]
-[ext_resource type="Script" uid="uid://dwgdvtddx81b3" path="res://Might use later/Player States/state_machine.gd" id="6_3smsa"]
-[ext_resource type="Script" uid="uid://bcbi2g4y4c02m" path="res://Might use later/Player States/idle.gd" id="7_8erm5"]
+[ext_resource type="Script" uid="uid://dwgdvtddx81b3" path="res://Player/Scripts/state_machine.gd" id="6_3smsa"]
+[ext_resource type="Script" uid="uid://bcbi2g4y4c02m" path="res://Player/Scripts/idle.gd" id="7_8erm5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(30, 30)
@@ -87,5 +87,5 @@ wait_time = 0.2
 [node name="StateMachine" type="Node" parent="." unique_id=407226494]
 script = ExtResource("6_3smsa")
 
-[node name="Node" type="Node" parent="StateMachine" unique_id=1509969924]
+[node name="idle" type="Node" parent="StateMachine" unique_id=1509969924]
 script = ExtResource("7_8erm5")
