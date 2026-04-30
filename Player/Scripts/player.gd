@@ -1,6 +1,7 @@
 extends CharacterBody2D
 #@onready var current_state = States.GROUND
 
+#showing example
 var air_speed
 var GRAVITY = 1000
 var recoil_force
