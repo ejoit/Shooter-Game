@@ -6,7 +6,8 @@
 [ext_resource type="Script" uid="uid://co6ub37ujgp7h" path="res://Scripts/camera_2d.gd" id="3_vgqql"]
 [ext_resource type="AudioStream" uid="uid://u8e06n0l7dgt" path="res://beta Throwaway stuuf/Shoot6.wav" id="5_fkybt"]
 [ext_resource type="Script" uid="uid://dwgdvtddx81b3" path="res://Player/Scripts/state_machine.gd" id="6_3smsa"]
-[ext_resource type="Script" uid="uid://bcbi2g4y4c02m" path="res://Player/Scripts/idle.gd" id="7_8erm5"]
+[ext_resource type="Script" uid="uid://bj1aetqv0q1mg" path="res://Player/Scripts/IdleState.gd" id="7_8erm5"]
+[ext_resource type="Script" uid="uid://on11i4rxe8it" path="res://Player/Scripts/MoveState.gd" id="8_f1ek2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(30, 30)
@@ -89,3 +90,6 @@ script = ExtResource("6_3smsa")
 
 [node name="idle" type="Node" parent="StateMachine" unique_id=1509969924]
 script = ExtResource("7_8erm5")
+
+[node name="move" type="Node" parent="StateMachine" unique_id=1432116616]
+script = ExtResource("8_f1ek2")
