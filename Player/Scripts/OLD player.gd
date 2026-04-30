@@ -126,6 +126,7 @@ func _physics_process(delta):
 			wall_timer_started = true
 		velocity.y = clamp(velocity.y, -800, 20)
 	if  is_on_floor(): 
+		air_shot = 0
 		can_wall_slide = true
 		wall_timer_started = false
 		on_wall_time_ready = true
