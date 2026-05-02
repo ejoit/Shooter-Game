@@ -30,9 +30,14 @@ func _physics_process(delta: float) -> void:
 		States.FALL:
 			fall(direction)
 
-		
+	
+
+			
+
+			
 	move_and_slide()
 	 
+
 func ground(direction, delta):
 	var speed = 3000	
 	velocity.x = direction * speed
@@ -40,6 +45,15 @@ func ground(direction, delta):
 
 	velocity.x = move_towards(velocity.x, direction * speed * delta)
 	
+
+
+
+
+
+
+
+
+
 
 	if Input.is_action_just_pressed("ui_accept"):
 		velocity.y = -400
@@ -54,6 +68,9 @@ func ground(direction, delta):
 	if is_on_wall_only():
 		change_state(States.WALL)
 		
+
+
+
 func air(direction, delta):
 	var speed = 250
 	velocity.x = direction * speed
@@ -68,7 +85,7 @@ func air(direction, delta):
 	
 func wall(direction, delta):
 	
-	velocity.y += 100
+	velocity.y += 10000
 	if not is_on_wall() and not is_on_floor():
 		change_state(States.AIR)
 	elif not is_on_wall() and is_on_floor_only():
@@ -78,6 +95,12 @@ func wall(direction, delta):
 
 func recoil(direction):
 	pass
+
+
+
+
+
+
 
 	
 func fall(directiobn):
