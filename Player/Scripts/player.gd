@@ -39,20 +39,9 @@ func _physics_process(delta: float) -> void:
 	 
 
 func ground(direction, delta):
-	var speed = 3000	
+	var speed = 300
 	velocity.x = direction * speed
 	velocity.y += GRAVITY * delta
-
-	velocity.x = move_towards(velocity.x, direction * speed * delta)
-	
-
-
-
-
-
-
-
-
 
 
 	if Input.is_action_just_pressed("ui_accept"):
@@ -72,10 +61,10 @@ func ground(direction, delta):
 
 
 func air(direction, delta):
-	var speed = 250
+	var speed = 16
 	velocity.x = direction * speed
 
-	velocity.x = move_towards(velocity.x, direction * speed * delta)
+	
 	
 	velocity.y += GRAVITY * delta
 	if is_on_floor():
