@@ -77,6 +77,7 @@ func wall(direction, delta):
 
 
 func recoil(direction):
+	pass
 
 	
 func fall(directiobn):
