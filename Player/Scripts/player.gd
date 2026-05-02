@@ -102,6 +102,12 @@ func recoil(direction):
 
 
 
+
+
+
+
+
+
 	
 func fall(directiobn):
 	pass
