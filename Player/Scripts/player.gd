@@ -29,23 +29,24 @@ func _physics_process(delta: float) -> void:
 			recoil(direction)
 		States.FALL:
 			fall(direction)
-			
 
-			
+		
 	move_and_slide()
 	 
-
 func ground(direction, delta):
-	var speed = 300	
+	var speed = 3000	
 	velocity.x = direction * speed
 	velocity.y += GRAVITY * delta
+
+	velocity.x = move_towards(velocity.x, direction * speed * delta)
 	
+
 	if Input.is_action_just_pressed("ui_accept"):
 		velocity.y = -400
 		change_state(States.AIR)
 		
-		if Input.is_action_just_pressed("fire"):
-			change_state(States.RECOIL)
+	if Input.is_action_just_pressed("fire"):
+		change_state(States.RECOIL)
 	
 	if not is_on_floor() and not is_on_wall():
 		change_state(States.AIR)
@@ -56,6 +57,8 @@ func ground(direction, delta):
 func air(direction, delta):
 	var speed = 250
 	velocity.x = direction * speed
+
+	velocity.x = move_towards(velocity.x, direction * speed * delta)
 	
 	velocity.y += GRAVITY * delta
 	if is_on_floor():
@@ -65,7 +68,7 @@ func air(direction, delta):
 	
 func wall(direction, delta):
 	
-	velocity.y += 10000
+	velocity.y += 100
 	if not is_on_wall() and not is_on_floor():
 		change_state(States.AIR)
 	elif not is_on_wall() and is_on_floor_only():
@@ -74,7 +77,7 @@ func wall(direction, delta):
 
 
 func recoil(direction):
-	print("Recoil")
+
 	
 func fall(directiobn):
 	pass
