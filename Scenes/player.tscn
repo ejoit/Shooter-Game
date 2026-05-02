@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://be8qbmt0fe144"]
 
-[ext_resource type="Script" uid="uid://c7uw2se0iwjkh" path="res://Player/Scripts/player.gd" id="1_fkybt"]
 [ext_resource type="Texture2D" uid="uid://dkpnvud1may1r" path="res://beta Throwaway stuuf/test_char.png" id="2_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://bfyqebuqpeull" path="res://Scenes/gun_1.tscn" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://co6ub37ujgp7h" path="res://Scripts/camera_2d.gd" id="3_vgqql"]
@@ -18,7 +17,6 @@ _data = [Vector2(0.020325199, 1), 0.0, 0.0, 0, 0, Vector2(0.699187, 0), 0.0, 0.0
 point_count = 2
 
 [node name="Player" type="CharacterBody2D" unique_id=591046258]
-script = ExtResource("1_fkybt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=372695957]
 position = Vector2(-2.3841858e-07, 0)
