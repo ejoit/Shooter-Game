@@ -64,7 +64,7 @@ func air(direction, delta):
 	var speed = 16
 	velocity.x = direction * speed
 
-	
+	#i vibe to vocaloid while coding this S*** peak
 	
 	velocity.y += GRAVITY * delta
 	if is_on_floor():
