@@ -5,7 +5,6 @@ var GRAVITY = 1800
 
 func physics_update(_delta: float) -> void:
 	player.velocity.y += GRAVITY * _delta
-	print("not moved yet")
 	if Input.is_action_just_pressed("ui_left"):
 		state_machine.change_state("move")
 	
