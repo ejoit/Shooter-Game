@@ -5,7 +5,7 @@ var GRAVITY = 1800
 
 func physics_update(_delta: float) -> void:
 	player.velocity.y += GRAVITY * _delta
-	if Input.is_action_just_pressed("ui_left"):
+	if player.is_on_floor():
 		state_machine.change_state("move")
 	
 	player.move_and_slide()
