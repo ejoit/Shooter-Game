@@ -7,20 +7,21 @@ var GRAVITY = 1000
 
 func enter() -> void:
 	player = state_machine.get_parent()
+
+
+func physics_update(delta: float) -> void:
 	if player.can_wall_slide == true:
 		player.velocity.y = 0
 	elif player.can_wall_slide == false:
 		state_machine.change_state("fall")
-
-func physics_update(delta: float) -> void:
 	print("wall")
 	player.velocity.x = move_toward(player.velocity.x, player.direction * speed, acceleration * delta)
 	
 	if player.can_wall_slide == true:
 		player.velocity.y += 50 * delta
 		
-		if player.wall_timer_started == true:
-			player.wall_timer_started = false
+		if player.wall_timer_started == false:
+			player.wall_timer_started = true
 			$"../../Timers/on_wall".start()
 	
 	elif player.can_wall_slide == false:

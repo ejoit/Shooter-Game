@@ -7,7 +7,7 @@ func enter() -> void:
 	player = state_machine.get_parent()
 	player.velocity.x = 0
 	player.can_wall_slide = true
-	player.wall_timer_started = true
+	player.wall_timer_started = false
 
 func physics_update(_delta: float) -> void:
 	print("idle")

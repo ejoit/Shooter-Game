@@ -11,7 +11,9 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	
 	direction = Input.get_axis("ui_left", "ui_right")
-
+	if is_on_floor():
+		can_wall_slide = true
+		wall_timer_started = false
 
 	
 	move_and_slide()
