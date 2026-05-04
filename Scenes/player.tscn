@@ -8,6 +8,9 @@
 [ext_resource type="Script" uid="uid://ekba1musokti" path="res://Player/Scripts/StateMachine.gd" id="6_8erm5"]
 [ext_resource type="Script" uid="uid://bffw465m81c5h" path="res://Player/Scripts/move.gd" id="7_3smsa"]
 [ext_resource type="Script" uid="uid://cfabngnsxlwbc" path="res://Player/Scripts/idle.gd" id="8_tx1dd"]
+[ext_resource type="Script" uid="uid://biqngvs0co5vh" path="res://Player/Scripts/fall.gd" id="9_f1ek2"]
+[ext_resource type="Script" uid="uid://d13oeef1avnan" path="res://Player/Scripts/jump.gd" id="10_tx1dd"]
+[ext_resource type="Script" uid="uid://dnpqxyth7cgrn" path="res://Player/Scripts/wall.gd" id="11_gymyn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(30, 30)
@@ -102,4 +105,17 @@ script = ExtResource("8_tx1dd")
 [node name="move" type="Node" parent="StateMachine" unique_id=126587122]
 script = ExtResource("7_3smsa")
 
+[node name="fall" type="Node" parent="StateMachine" unique_id=702826278]
+script = ExtResource("9_f1ek2")
+metadata/_custom_type_script = "uid://cext0l4oc11n0"
+
+[node name="Jump" type="Node" parent="StateMachine" unique_id=1559442502]
+script = ExtResource("10_tx1dd")
+metadata/_custom_type_script = "uid://cext0l4oc11n0"
+
+[node name="wall" type="Node" parent="StateMachine" unique_id=564244971]
+script = ExtResource("11_gymyn")
+metadata/_custom_type_script = "uid://cext0l4oc11n0"
+
+[connection signal="timeout" from="Timers/on_wall" to="StateMachine/wall" method="_on_on_wall_timeout"]
 [connection signal="timeout" from="Timers/Recoil_Timer" to="." method="_on_recoil_timer_timeout"]
