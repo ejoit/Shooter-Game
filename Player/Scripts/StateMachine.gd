@@ -17,15 +17,25 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if current_state:
 		current_state.update(delta)
-		
+
+var can_change_state := true
+
 func _physics_process(delta: float) -> void:
+	can_change_state = true
 	if current_state:
 		current_state.physics_update(delta)
+	can_change_state = true
 		
 func change_state(new_state_name: String) -> void:
+	if not can_change_state: return
+	can_change_state = false
+	
 	var new_state: State = states.get(new_state_name.to_lower())
 	
 	assert(new_state, "STATE NOT FOUND BRUH" + new_state_name)
+	if current_state == new_state:
+		return
+	
 	if current_state:
 		current_state.exit()
 		
