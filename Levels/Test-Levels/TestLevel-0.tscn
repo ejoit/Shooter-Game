@@ -62,3 +62,5 @@ position = Vector2(88, -224)
 [node name="Level_Swaper" parent="." unique_id=2049589459 instance=ExtResource("6_wmsvh")]
 position = Vector2(584, -72)
 next_level = "res://Levels/Test-Levels/TestLevel-1.tscn"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=493499244]

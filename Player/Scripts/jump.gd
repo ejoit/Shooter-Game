@@ -9,8 +9,9 @@ func enter() -> void:
 
 func physics_update(_delta: float) -> void:
 	print("jump")
-	if not player.is_on_floor() or not player.is_on_wall_only():
+	if not player.is_on_floor():
 		state_machine.change_state("fall")
-
-	if player.is_on_wall_only():
-		state_machine.change_state("wall")
+		return
+	elif  player.is_on_floor() and !player.velocity.x == 0:
+		state_machine.change_state("move")
+		return		

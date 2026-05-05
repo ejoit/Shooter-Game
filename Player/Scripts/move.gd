@@ -9,14 +9,15 @@ func enter() -> void:
 	player.wall_timer_started = false
 
 func physics_update(delta: float) -> void:
+
 	print("movin")
 	player.velocity.x = move_toward(player.velocity.x, player.direction * speed, acceleration * delta)
+	
 	if player.is_on_floor():
 		player.can_wall_slide = true
 	if not player.is_on_floor():
 		state_machine.change_state("fall")
-	if player.is_on_wall():
-		pass
+	
 		
 	if player.velocity.x == 0:
 		state_machine.change_state("idle")

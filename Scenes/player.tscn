@@ -7,10 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://u8e06n0l7dgt" path="res://beta Throwaway stuuf/Shoot6.wav" id="5_fkybt"]
 [ext_resource type="Script" uid="uid://ekba1musokti" path="res://Player/Scripts/StateMachine.gd" id="6_8erm5"]
 [ext_resource type="Script" uid="uid://bffw465m81c5h" path="res://Player/Scripts/move.gd" id="7_3smsa"]
+[ext_resource type="Script" uid="uid://cext0l4oc11n0" path="res://Player/Scripts/State.gd" id="7_ukyrk"]
 [ext_resource type="Script" uid="uid://cfabngnsxlwbc" path="res://Player/Scripts/idle.gd" id="8_tx1dd"]
 [ext_resource type="Script" uid="uid://biqngvs0co5vh" path="res://Player/Scripts/fall.gd" id="9_f1ek2"]
 [ext_resource type="Script" uid="uid://d13oeef1avnan" path="res://Player/Scripts/jump.gd" id="10_tx1dd"]
 [ext_resource type="Script" uid="uid://dnpqxyth7cgrn" path="res://Player/Scripts/wall.gd" id="11_gymyn"]
+[ext_resource type="Script" uid="uid://nk2ef3dfskay" path="res://Player/Scripts/recoil.gd" id="12_pu2lt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(30, 30)
@@ -99,23 +101,31 @@ script = ExtResource("6_8erm5")
 initial_state = NodePath("idle")
 metadata/_custom_type_script = "uid://ekba1musokti"
 
-[node name="idle" type="Node" parent="StateMachine" unique_id=820644595]
-script = ExtResource("8_tx1dd")
-
-[node name="move" type="Node" parent="StateMachine" unique_id=126587122]
-script = ExtResource("7_3smsa")
-
-[node name="fall" type="Node" parent="StateMachine" unique_id=702826278]
-script = ExtResource("9_f1ek2")
+[node name="Ground" type="Node" parent="StateMachine" unique_id=303865794]
+script = ExtResource("7_ukyrk")
 metadata/_custom_type_script = "uid://cext0l4oc11n0"
 
 [node name="Jump" type="Node" parent="StateMachine" unique_id=1559442502]
 script = ExtResource("10_tx1dd")
 metadata/_custom_type_script = "uid://cext0l4oc11n0"
 
+[node name="fall" type="Node" parent="StateMachine" unique_id=702826278]
+script = ExtResource("9_f1ek2")
+metadata/_custom_type_script = "uid://cext0l4oc11n0"
+
 [node name="wall" type="Node" parent="StateMachine" unique_id=564244971]
 script = ExtResource("11_gymyn")
 metadata/_custom_type_script = "uid://cext0l4oc11n0"
+
+[node name="recoil" type="Node" parent="StateMachine" unique_id=1343325213]
+script = ExtResource("12_pu2lt")
+metadata/_custom_type_script = "uid://cext0l4oc11n0"
+
+[node name="idle" type="Node" parent="StateMachine" unique_id=820644595]
+script = ExtResource("8_tx1dd")
+
+[node name="move" type="Node" parent="StateMachine" unique_id=126587122]
+script = ExtResource("7_3smsa")
 
 [connection signal="timeout" from="Timers/on_wall" to="StateMachine/wall" method="_on_on_wall_timeout"]
 [connection signal="timeout" from="Timers/Recoil_Timer" to="." method="_on_recoil_timer_timeout"]
