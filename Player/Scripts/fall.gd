@@ -20,6 +20,6 @@ func physics_update(_delta: float) -> void:
 	elif player.is_on_floor() and player.velocity.x == 0:
 		state_machine.change_state("idle")
 		return	
-	elif player.is_on_wall_only() and player.can_wall_slide == true:
+	elif player.is_on_wall_only() and player.can_wall_slide == true and player.velocity.y > 0:
 		state_machine.change_state("wall")
 		return

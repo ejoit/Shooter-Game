@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	can_change_state = true
 	if current_state:
 		current_state.physics_update(delta)
-	can_change_state = true
+
 		
 func change_state(new_state_name: String) -> void:
 	if not can_change_state: return
