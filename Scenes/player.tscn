@@ -26,6 +26,7 @@ _data = [Vector2(0.020325199, 1), 0.0, 0.0, 0, 0, Vector2(0.699187, 0), 0.0, 0.0
 point_count = 2
 
 [node name="Player" type="CharacterBody2D" unique_id=591046258]
+safe_margin = 0.3
 script = ExtResource("1_8erm5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=372695957]

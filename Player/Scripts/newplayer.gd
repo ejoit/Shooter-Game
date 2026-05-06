@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player 
 
 var direction := 0
-var can_wall_slide = false
+var can_wall_slide = true
 var wall_timer_started = false
 
 func _process(delta: float) -> void:
@@ -11,9 +11,11 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	
 	direction = Input.get_axis("ui_left", "ui_right")
-	if is_on_floor():
-		can_wall_slide = true
-		wall_timer_started = false
+
+	print("can wall slide=", can_wall_slide) 
+	
+
+
 
 	
 	move_and_slide()
