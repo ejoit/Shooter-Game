@@ -10,7 +10,7 @@ func enter() -> void:
 	player.wall_timer_started = false
 
 func physics_update(_delta: float) -> void:
-
+	player.can_wall_slide = true
 	print("idle")
 	if Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right"):
 		state_machine.change_state("move")

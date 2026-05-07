@@ -106,6 +106,8 @@ func recoil(direction,delta):
 	if recoil_timer_end == true:
 		change_state(States.AIR)
 		
+
+		
 func _on_recoil_timer_timeout() -> void:
 	recoil_timer_end = false
 

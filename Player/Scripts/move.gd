@@ -9,7 +9,7 @@ func enter() -> void:
 	player.wall_timer_started = false
 
 func physics_update(delta: float) -> void:
-
+	player.can_wall_slide = true
 	print("movin")
 	player.velocity.x = move_toward(player.velocity.x, player.direction * speed, acceleration * delta)
 	

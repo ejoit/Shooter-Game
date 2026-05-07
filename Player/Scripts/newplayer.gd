@@ -11,7 +11,6 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	
 	direction = Input.get_axis("ui_left", "ui_right")
-
 	print("can wall slide=", can_wall_slide) 
 	
 
