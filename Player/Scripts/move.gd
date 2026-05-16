@@ -1,6 +1,6 @@
 extends State
 var acceleration = 8000
-var speed = 500
+var speed = 380
 @onready var player: CharacterBody2D 
 
 func enter() -> void:
@@ -8,6 +8,10 @@ func enter() -> void:
 	player.can_wall_slide = true
 	player.wall_timer_started = false
 
+	player.can_wall_jump = true
+	player.can_shoot = true
+	player.can_wall_shoot = true
+	
 func physics_update(delta: float) -> void:
 	player.can_wall_slide = true
 	print("movin")
@@ -21,5 +25,9 @@ func physics_update(delta: float) -> void:
 	if player.velocity.x == 0:
 		state_machine.change_state("idle")
 	
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("jump"):
 		state_machine.change_state("jump")
+	
+	if Input.is_action_just_pressed("fire") and player.can_shoot == true:
+		player.can_shoot = false
+		state_machine.change_state("recoil")

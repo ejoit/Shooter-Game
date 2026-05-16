@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://d13oeef1avnan" path="res://Player/Scripts/jump.gd" id="10_tx1dd"]
 [ext_resource type="Script" uid="uid://dnpqxyth7cgrn" path="res://Player/Scripts/wall.gd" id="11_gymyn"]
 [ext_resource type="Script" uid="uid://nk2ef3dfskay" path="res://Player/Scripts/recoil.gd" id="12_pu2lt"]
+[ext_resource type="Script" uid="uid://nyaxqhdkqm78" path="res://Player/Scripts/wall_jump.gd" id="14_7dp3o"]
+[ext_resource type="Script" uid="uid://cext0l4oc11n0" path="res://Player/Scripts/State.gd" id="15_h4iuc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(30, 30)
@@ -97,6 +99,10 @@ wait_time = 0.2
 process_callback = 0
 wait_time = 3.0
 
+[node name="CoyoteTimer" type="Timer" parent="Timers" unique_id=979216521]
+wait_time = 0.12
+one_shot = true
+
 [node name="StateMachine" type="Node" parent="." unique_id=1843149592 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("6_8erm5")
 initial_state = NodePath("idle")
@@ -127,6 +133,14 @@ script = ExtResource("8_tx1dd")
 
 [node name="move" type="Node" parent="StateMachine" unique_id=126587122]
 script = ExtResource("7_3smsa")
+
+[node name="wall_jump" type="Node" parent="StateMachine" unique_id=1557451437]
+script = ExtResource("14_7dp3o")
+metadata/_custom_type_script = "uid://cext0l4oc11n0"
+
+[node name="Floor_Slide" type="Node" parent="StateMachine" unique_id=1359081366]
+script = ExtResource("15_h4iuc")
+metadata/_custom_type_script = "uid://cext0l4oc11n0"
 
 [connection signal="timeout" from="Timers/on_wall" to="StateMachine/wall" method="_on_on_wall_timeout"]
 [connection signal="timeout" from="Timers/Recoil_Timer" to="." method="_on_recoil_timer_timeout"]

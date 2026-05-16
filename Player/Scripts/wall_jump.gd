@@ -1,12 +1,17 @@
 extends State
 
 @onready var player: CharacterBody2D 
-var jump_force = -500
+var jump_force_wall = -400
 
 func enter() -> void:
 	player = state_machine.get_parent()
-	player.velocity.y = jump_force
-	player.coyote_time_activated = true
+	var touching_wall_slide = player.get_wall_normal()
+	player = state_machine.get_parent()
+	player.velocity.y = jump_force_wall
+	if touching_wall_slide.x > 0:
+		player.velocity.x = 240
+	elif touching_wall_slide.x < 0:
+		player.velocity.x = -240
 
 
 func physics_update(_delta: float) -> void:

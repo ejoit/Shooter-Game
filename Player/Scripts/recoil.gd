@@ -1,11 +1,11 @@
 extends State
+@onready var player: CharacterBody2D
 
+func  enter() -> void:
+	player = state_machine.get_parent()
+	var local_recoil_direction = player.global_position.direction_to(player.get_global_mouse_position())
+	player.velocity = -800 * local_recoil_direction
+	
+func physics_update(_delta: float) -> void:
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	state_machine.change_state("fall")

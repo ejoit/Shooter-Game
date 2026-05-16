@@ -1,12 +1,15 @@
 extends Node
 
-#i forgot why this made do_later: [insert skull emoji here ->]
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func death(body: Node, coords: Vector2):
+	if body.is_in_group("player"):
+		body.get_node("Sprite2D").hide()
+		body.get_node("Gun-1").hide()
+		#deathpar.global_position = coords
+		#$Deathpar.restart()
+		body.get_node("CollisionShape2D").disabled = true
+		#get_node("Deathpar").emitting = true
+		body.process_mode = body.PROCESS_MODE_DISABLED
+		#$SpikeDeath.play()
+		await get_tree().create_timer(0.3).timeout
+		get_tree().reload_current_scene()
+		return
