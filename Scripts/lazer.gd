@@ -6,8 +6,8 @@ extends RayCast2D
 @export var color :=Color.WHITE: set = set_color
 @onready var line_2d : Line2D = $Line2D
 
-@export var time_as_green = 0 
-@export var time_as_red = 0
+@export var time_as_green: float = 0 
+@export var time_as_red: float = 0
 
 
 var lazer_safe_mode: bool = true
@@ -15,6 +15,7 @@ var lazer_safe_mode: bool = true
 func _ready() -> void:
 	set_color(color)
 	lazer_cycle()
+	
 
 func set_color(new_color: Color) -> void:
 	color = new_color
@@ -52,6 +53,7 @@ func _physics_process(delta: float) -> void:
 
 		if hit and hit.is_in_group("player"):
 			if lazer_safe_mode == false:
+				$Audio/death.play()
 				Global.death(hit, get_collision_point())
 			else:
 				pass

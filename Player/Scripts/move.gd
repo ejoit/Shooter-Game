@@ -1,6 +1,6 @@
 extends State
 var acceleration = 8000
-var speed = 380
+var speed = 240
 @onready var player: CharacterBody2D 
 
 func enter() -> void:

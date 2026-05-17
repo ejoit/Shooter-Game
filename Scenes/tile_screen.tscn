@@ -5,38 +5,65 @@
 [node name="TileScreen" type="Node2D" unique_id=1699904072]
 script = ExtResource("1_y6wf6")
 
-[node name="Label" type="Label" parent="." unique_id=672523939]
-offset_right = 1142.0
-offset_bottom = 122.0
-theme_override_font_sizes/font_size = 40
-text = "RECOIL GAME"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1192812386]
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0.14767182, 0.14767179, 0.14767179, 1)
+
+[node name="Text_Manager" type="Control" parent="." unique_id=621972766]
+layout_mode = 3
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1154.0
+offset_bottom = 642.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Text_Manager" unique_id=815808460]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -497.0
+offset_top = -121.0
+offset_right = 503.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 51
+text = "*NAME PENDING- GAME ABOUT RECOIL*"
 
 [node name="Button_Manager" type="Control" parent="." unique_id=99658737]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -8.0
 offset_right = 1154.0
-offset_bottom = 650.0
+offset_bottom = 642.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 
 [node name="START" type="Button" parent="Button_Manager" unique_id=1229296042]
-layout_mode = 0
-offset_left = 400.0
-offset_top = 144.0
-offset_right = 742.0
-offset_bottom = 216.0
-text = "START"
-
-[node name="START2" type="Button" parent="Button_Manager" unique_id=445995249]
+self_modulate = Color(1, 0.41000003, 0.9606667, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 402.0
-offset_top = 241.0
-offset_right = -410.0
-offset_bottom = -337.0
-text = "HELP/HOW TO PLAY"
+anchor_left = -0.014
+anchor_right = 0.984
+anchor_bottom = 1.0220001
+offset_left = 408.156
+offset_top = 408.0
+offset_right = -401.536
+offset_bottom = -184.30005
+grow_horizontal = 2
+grow_vertical = 2
+text = "START"
 
 [connection signal="pressed" from="Button_Manager/START" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Button_Manager/START2" to="." method="_on_start_2_pressed"]

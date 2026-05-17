@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Player 
 
+signal Shoot 
 var direction := 0
 var can_wall_slide = true
 var wall_timer_started = false
@@ -32,6 +33,7 @@ func _physics_process(delta: float) -> void:
 		if not coyote_time_activated:
 			CoyoteTimer.start()
 			coyote_time_activated = true
+			
 
 
 	move_and_slide()

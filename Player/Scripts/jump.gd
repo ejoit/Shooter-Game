@@ -1,7 +1,7 @@
 extends State
 
 @onready var player: CharacterBody2D 
-var jump_force = -500
+var jump_force = -260
 
 func enter() -> void:
 	player = state_machine.get_parent()

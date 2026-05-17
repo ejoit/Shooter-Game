@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b42eeluvj2412" path="res://Scripts/lazer.gd" id="1_nulvu"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_kxm2h"]
+[ext_resource type="AudioStream" uid="uid://bwmcbba4h4kom" path="res://beta Throwaway stuuf/Hit20.wav" id="3_55sbj"]
 
 [node name="Lazer" type="RayCast2D" unique_id=511170306]
 target_position = Vector2(0, 1)
 script = ExtResource("1_nulvu")
 max_length = 1
+color = Color(0, 0.39215687, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1348388740]
 position = Vector2(0, -5.25)
@@ -14,6 +16,13 @@ scale = Vector2(0.3046875, 0.08203125)
 texture = ExtResource("2_kxm2h")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=689288345]
+modulate = Color(0, 0.39215687, 0, 1)
 points = PackedVector2Array(0, 0, 0, 1)
-begin_cap_mode = 2
-end_cap_mode = 2
+width = 5.0
+begin_cap_mode = 1
+end_cap_mode = 1
+
+[node name="Audio" type="Node" parent="." unique_id=470395658]
+
+[node name="death" type="AudioStreamPlayer2D" parent="Audio" unique_id=305623119]
+stream = ExtResource("3_55sbj")

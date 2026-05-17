@@ -20,14 +20,15 @@
 size = Vector2(30, 30)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6t5aa"]
-radius = 22.0
-height = 44.0
+radius = 13.0
+height = 28.0
 
 [sub_resource type="Curve" id="Curve_fkybt"]
 _data = [Vector2(0.020325199, 1), 0.0, 0.0, 0, 0, Vector2(0.699187, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="Player" type="CharacterBody2D" unique_id=591046258]
+scale = Vector2(0.5, 0.5)
 safe_margin = 0.3
 script = ExtResource("1_8erm5")
 
@@ -39,11 +40,17 @@ texture = ExtResource("2_cvnsp")
 shape = SubResource("RectangleShape2D_vgqql")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=652958718]
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 8.0
 script = ExtResource("3_vgqql")
 
 [node name="Gun-1" parent="." unique_id=463536560 instance=ExtResource("3_6t5aa")]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1640827813]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1941141029]
 shape = SubResource("CapsuleShape2D_6t5aa")
@@ -142,5 +149,11 @@ metadata/_custom_type_script = "uid://cext0l4oc11n0"
 script = ExtResource("15_h4iuc")
 metadata/_custom_type_script = "uid://cext0l4oc11n0"
 
+[node name="Audio" type="Node" parent="." unique_id=167205170]
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="Audio" unique_id=97943893]
+stream = ExtResource("5_fkybt")
+
+[connection signal="Shoot" from="." to="Camera2D" method="_on_player_shoot"]
 [connection signal="timeout" from="Timers/on_wall" to="StateMachine/wall" method="_on_on_wall_timeout"]
 [connection signal="timeout" from="Timers/Recoil_Timer" to="." method="_on_recoil_timer_timeout"]

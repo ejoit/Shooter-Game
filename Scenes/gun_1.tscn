@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfyqebuqpeull"]
 
 [ext_resource type="Script" uid="uid://c04ae3xkieolj" path="res://Scripts/gun_1.gd" id="1_87wgx"]
-[ext_resource type="Texture2D" uid="uid://c71k6hwebwrwn" path="res://beta Throwaway stuuf/betagun.png" id="2_5swln"]
+[ext_resource type="Texture2D" uid="uid://bscs3ovwvvcfg" path="res://Sprites/Guns/TerribleGun.png" id="2_5swln"]
 
 [sub_resource type="Curve" id="Curve_5swln"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.024390236, 1), 0.0, 0.0, 0, 0, Vector2(0.3211382, 0), 0.0, 0.0, 0, 0]
@@ -11,7 +11,8 @@ point_count = 3
 script = ExtResource("1_87wgx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1904820206]
-position = Vector2(11, -2)
+position = Vector2(13, -6)
+scale = Vector2(4, 4)
 texture = ExtResource("2_5swln")
 
 [node name="ShootFlash" type="CPUParticles2D" parent="." unique_id=707877835]
