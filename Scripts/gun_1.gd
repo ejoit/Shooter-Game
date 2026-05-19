@@ -10,8 +10,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 
-	if Input.is_action_just_pressed("fire"):
-		var bullet_instance = BULLET.instantiate()
-		get_tree().root.add_child(bullet_instance)
-		bullet_instance.global_position = global_position
-		bullet_instance.rotation = rotation
+
+
+
+func _on_recoil_shoot() -> void:
+	var bullet_instance = BULLET.instantiate()
+	get_tree().root.add_child(bullet_instance)
+	bullet_instance.global_position = global_position
+	bullet_instance.rotation = rotation

@@ -11,11 +11,12 @@ func enter() -> void:
 	player.can_wall_jump = true
 	player.can_shoot = true
 	player.can_wall_shoot = true
-	
+	var landing_velocity = player.velocity.y
+
+
 
 func physics_update(_delta: float) -> void:
 	player.can_wall_slide = true
-	print("idle")
 	if Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right"):
 		state_machine.change_state("move")
 	

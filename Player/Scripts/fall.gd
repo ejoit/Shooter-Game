@@ -3,7 +3,8 @@ extends State
 var GRAVITY = 1800
 var speed = 320
 var acceleration = 1000
-var friction = 10
+var friction = 12
+var air_control = 0.32
 
 func enter() -> void:
 	player = state_machine.get_parent()
@@ -15,16 +16,21 @@ func enter() -> void:
 func physics_update(delta: float) -> void:
 	print("fall")
 	player.velocity.y += GRAVITY * delta
+	
 	if player.direction != 0:
-		player.velocity.x = move_toward(player.velocity.x, player.direction * speed, acceleration * delta)
+		var target_x = player.direction * speed
+		player.velocity.x = move_toward(player.velocity.x, target_x, acceleration * air_control * delta)
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, friction * delta)
+	
 	if player.is_on_floor() and player.velocity.x != 0:
-		state_machine.change_state("move")
-		return
+			state_machine.change_state("move")
+			return
 	elif player.is_on_floor() and player.velocity.x == 0:
-		state_machine.change_state("idle")
-		return	
+			state_machine.change_state("idle")
+			return	
+		
+		
 	elif player.is_on_wall() and player.can_wall_slide == true:
 			state_machine.change_state("wall" )
 	elif player.is_on_wall() and player.can_wall_slide == false:

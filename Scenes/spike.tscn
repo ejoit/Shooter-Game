@@ -22,6 +22,7 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_khj5f")
 
 [node name="SpikeDeath" type="AudioStreamPlayer2D" parent="." unique_id=1702070225]
+position = Vector2(0, -1)
 stream = ExtResource("3_2mnih")
 
 [node name="Deathpar" parent="." unique_id=150227896 instance=ExtResource("4_fhxds")]

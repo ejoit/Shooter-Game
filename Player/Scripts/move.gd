@@ -1,6 +1,6 @@
 extends State
 var acceleration = 8000
-var speed = 240
+var speed = 175
 @onready var player: CharacterBody2D 
 
 func enter() -> void:
@@ -11,7 +11,8 @@ func enter() -> void:
 	player.can_wall_jump = true
 	player.can_shoot = true
 	player.can_wall_shoot = true
-	
+
+
 func physics_update(delta: float) -> void:
 	player.can_wall_slide = true
 	print("movin")

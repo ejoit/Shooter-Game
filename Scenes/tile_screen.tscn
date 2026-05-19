@@ -35,7 +35,22 @@ offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 51
-text = "*NAME PENDING- GAME ABOUT RECOIL*"
+text = "GUNNED-IT
+(place holder name)"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Text_Manager" unique_id=295230243]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 480.0
+offset_right = 1189.0
+offset_bottom = 640.0
+text = "how to play-
+Press A/D to move
+Space to jump
+Aim with mouse to shoot then left click
+You can shoot once before landing on floor but you can get an extra shot by shooting of the wall
+"
 
 [node name="Button_Manager" type="Control" parent="." unique_id=99658737]
 layout_mode = 3

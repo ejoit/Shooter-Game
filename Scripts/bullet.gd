@@ -10,3 +10,17 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position += transform.x * speed * delta
+
+
+
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	# Check if the body we collided with is the TileMap
+
+	if body is TileMap or body is TileMapLayer:
+		$Bullet_Sprite.visible = false
+		$Boom.restart()
+		get_node("Boom").emitting = true
+		await $Boom.finished
+		queue_free()
