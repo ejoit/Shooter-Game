@@ -21,9 +21,10 @@ func _process(delta: float) -> void:
 	var recoil_direction = global_position.direction_to(get_global_mouse_position())
 
 
+
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("ui_left", "ui_right")
-	print(velocity)
+
 	if velocity.y > 25:
 		pass
 
