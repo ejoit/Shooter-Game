@@ -86,7 +86,6 @@ position = Vector2(456, 72)
 position = Vector2(306, -262)
 target_position = Vector2(0, 340)
 max_length = 340
-color = Color(1, 0, 0, 1)
 time_as_green = 1.8
 time_as_red = 2.3
 

@@ -58,7 +58,7 @@ func _physics_process(delta: float) -> void:
 			else:
 				pass
 
-	line_2d.points[1] = laser_end_position
+	line_2d.set_point_position(1, laser_end_position)
 	
 	
 	

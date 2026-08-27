@@ -5,9 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://bwmcbba4h4kom" path="res://beta Throwaway stuuf/Hit20.wav" id="3_55sbj"]
 
 [node name="Lazer" type="RayCast2D" unique_id=511170306]
-target_position = Vector2(0, 1)
+target_position = Vector2(0, 5)
 script = ExtResource("1_nulvu")
-max_length = 1
 color = Color(0, 0.39215687, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1348388740]
@@ -17,7 +16,9 @@ texture = ExtResource("2_kxm2h")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=689288345]
 modulate = Color(0, 0.39215687, 0, 1)
-points = PackedVector2Array(0, 0, 0, 1)
+position = Vector2(0, 1)
+scale = Vector2(1, 1.2)
+points = PackedVector2Array(0, 0, 0, 38.333332)
 width = 5.0
 begin_cap_mode = 1
 end_cap_mode = 1
